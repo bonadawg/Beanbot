@@ -1,1 +1,1 @@
-worker: node beanbot.py
+worker: python beanbot.py
