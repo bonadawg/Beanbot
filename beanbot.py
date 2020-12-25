@@ -72,6 +72,7 @@ async def on_message(message):
         await message.channel.send(response)
 
     if message.content == '$beannihilate':
+        s = set()
         for _ in range(10):
             curr = get_bean()
             while curr in s:
