@@ -71,4 +71,19 @@ async def on_message(message):
         response = 'No.'
         await message.channel.send(response)
 
+    if message.content == '$beannihilate':
+        for _ in range(10):
+            curr = get_bean()
+            while curr in s:
+                curr = get_bean()
+            s.add(curr)
+
+            async with aiohttp.ClientSession() as session:
+                async with session.get(curr) as resp:
+                    if resp.status != 200:
+                        return await message.author.send('Could not download file...')
+                    data = io.BytesIO(await resp.read())
+                    await message.author.send(file=discord.File(data, curr))
+
+
 client.run(TOKEN)
