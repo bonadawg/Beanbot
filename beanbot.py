@@ -73,7 +73,7 @@ async def on_message(message):
 
     if message.content == '$beannihilate':
         s = set()
-        for _ in range(10):
+        for _ in range(15):
             curr = get_bean()
             while curr in s:
                 curr = get_bean()
