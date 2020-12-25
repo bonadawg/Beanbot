@@ -71,7 +71,7 @@ async def on_message(message):
         response = 'No.'
         await message.channel.send(response)
 
-    if message.content == '$beannihilate' or message.content.split().length == 2:
+    if message.content == '$beannihilate' or (len(message.content.split()) == 2 and message.content.split()[0] == '$beannihilate':
         s = set()
         for _ in range(15):
             curr = get_bean()
